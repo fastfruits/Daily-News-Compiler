@@ -1,8 +1,14 @@
 import requests
+import json
+
+def getToken(file_path, variable):
+    with open(file_path, 'r') as file:
+        config = json.load(file)
+        return config.get(variable)
 
 def my_custom_function():
     url = "https://api.worldnewsapi.com/search-news?text=earth+quake&language=en&earliest-publish-date=2024-04-01"
-    api_key = "10e5199f78f44546895b1e24de75e41f"
+    api_key = getToken('config.json', 'newsToken')
 
     headers = {
         'x-api-key': api_key
