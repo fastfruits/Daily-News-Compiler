@@ -1,5 +1,6 @@
 import requests
 import json
+import ui
 
 def getToken(file_path, variable):
     with open(file_path, 'r') as file:
@@ -23,3 +24,5 @@ def my_custom_function():
 
 if __name__ == "__main__":
     print(my_custom_function())
+
+ui.createWindow()
