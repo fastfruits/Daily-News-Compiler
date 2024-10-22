@@ -15,6 +15,7 @@ def createWindow():
     btnPolitics.pack()
     btnUS.pack()
     btnNature.pack()
+    btnGenerate.pack()
 
     frame1.pack()
     window.mainloop()
@@ -41,7 +42,7 @@ btnScience = tk.Button(frame1,
     bg="#009CFF", 
     text="Science",
     fg="white",
-    command=pickNewsType("Science")
+    command=pickNewsType("science")
 )
 btnPolitics = tk.Button(frame1, 
     width = 50,
@@ -49,15 +50,15 @@ btnPolitics = tk.Button(frame1,
     bg="#009CFF", 
     text="Politics",
     fg="white",
-    command=pickNewsType("Politics")
+    command=pickNewsType("politics")
 )
-btnUS = tk.Button(frame1, 
+btnTech = tk.Button(frame1, 
     width = 50,
     height = 5,
     bg="#009CFF", 
-    text="United States",
+    text="Technology",
     fg="white",
-    command=pickNewsType("United States")
+    command=pickNewsType("technology")
 )
 btnNature = tk.Button(frame1, 
     width = 50,
@@ -65,7 +66,16 @@ btnNature = tk.Button(frame1,
     bg="#009CFF", 
     text="Nature",
     fg="white",
-    command=pickNewsType("Nature")
+    command=pickNewsType("environment")
+)
+
+btnGenerate = tk.Button(frame1, 
+    width = 50,
+    height = 5,
+    bg="#009CFF", 
+    text="Science",
+    fg="white",
+    command=main.mainFunction()
 )
 
 createWindow()
