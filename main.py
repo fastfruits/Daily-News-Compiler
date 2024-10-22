@@ -1,6 +1,9 @@
 import requests
 import json
 import ui
+from datetime import date
+
+print(str(date.today()))
 
 def getToken(file_path, variable):
     with open(file_path, 'r') as file:
@@ -8,7 +11,7 @@ def getToken(file_path, variable):
         return config.get(variable)
 
 def my_custom_function():
-    url = "https://api.worldnewsapi.com/search-news?text=earth+quake&language=en&earliest-publish-date=2024-04-01"
+    url = "https://api.worldnewsapi.com/search-news?text=earth+quake&language=en&earliest-publish-date=" + str(date.today()) + ""
     api_key = getToken('config.json', 'newsToken')
 
     headers = {

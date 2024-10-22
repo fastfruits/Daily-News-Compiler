@@ -5,13 +5,12 @@ news = ""
 
 window = tk.Tk()
 window.geometry("400x400")
-window.title("AI-Personality")
+window.title("Daily News Compiler")
 window.configure(bg="#009CFF")
 window.resizable(False, False)
 
 def createWindow():
     label.pack()
-    personality.pack()
     btnScience.pack()
     btnPolitics.pack()
     btnUS.pack()
@@ -33,9 +32,6 @@ label = tk.Label(frame1,
     text="Welcome to News Compiler!", 
     bg="#009CFF", 
     fg="white"
-)
-personality = tk.Entry(frame1, 
-    width=100, 
 )
 btnScience = tk.Button(frame1, 
     width = 50,
