@@ -2,6 +2,7 @@ import requests
 import json
 import ui
 from datetime import date
+import threading
 
 print(str(date.today()))
 
@@ -10,7 +11,7 @@ def getToken(file_path, variable):
         config = json.load(file)
         return config.get(variable)
 
-def my_custom_function():
+def mainFunction():
     url = "https://api.worldnewsapi.com/search-news?text=earth+quake&language=en&earliest-publish-date=" + str(date.today()) + ""
     api_key = getToken('config.json', 'newsToken')
 
@@ -26,6 +27,9 @@ def my_custom_function():
         return f"Error: {response.status_code}"
 
 if __name__ == "__main__":
-    print(my_custom_function())
+    print(mainFunction())
+
+background_thread = threading.Thread(target=mainFunction, daemon=True)
+background_thread.start()
 
 ui.createWindow()

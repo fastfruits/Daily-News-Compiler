@@ -21,6 +21,8 @@ def createWindow():
 
 def pickNewsType(newsType):
     news = newsType
+    print(news)
+    return news
 
 frame1 = tk.Frame(
     master=window,
@@ -39,7 +41,7 @@ btnScience = tk.Button(frame1,
     bg="#009CFF", 
     text="Science",
     fg="white",
-    command=pickNewsType("science")
+    command=pickNewsType("Science")
 )
 btnPolitics = tk.Button(frame1, 
     width = 50,
