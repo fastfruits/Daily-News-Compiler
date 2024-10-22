@@ -12,6 +12,9 @@ def getToken(file_path, variable):
         return config.get(variable)
 
 def mainFunction():
+    while ui.news == "":
+        print("here")
+
     url = "https://api.worldnewsapi.com/search-news?text=earth+quake&language=en&earliest-publish-date=" + str(date.today()) + ""
     api_key = getToken('config.json', 'newsToken')
 
