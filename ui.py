@@ -1,4 +1,5 @@
 import tkinter as tk
+import main
 
 voice = "Voice1"
 news = ""
@@ -13,7 +14,7 @@ def createWindow():
     label.pack()
     btnScience.pack()
     btnPolitics.pack()
-    btnUS.pack()
+    btnTech.pack()
     btnNature.pack()
     btnGenerate.pack()
 

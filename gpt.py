@@ -39,7 +39,7 @@ class GPTManager:
             return
 
         # Check that the prompt is under the token context limit
-        question = [{"role": "user", "content": prompt}]
+        question = [{"role": "user", "content": "Summarize this into " + prompt}]
         if tokenCnt(question) > 8000:
             print("The length of this chat question is too large")
             return
