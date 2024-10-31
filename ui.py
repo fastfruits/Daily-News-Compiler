@@ -1,11 +1,13 @@
 import tkinter as tk
-import main
+from queue import Queue
+
 
 voice = "Voice1"
 news = ""
+generate_q = Queue()
 
 window = tk.Tk()
-window.geometry("400x400")
+window.geometry("600x800")
 window.title("Daily News Compiler")
 window.configure(bg="#009CFF")
 window.resizable(False, False)
@@ -21,10 +23,18 @@ def createWindow():
     frame1.pack()
     window.mainloop()
 
+def button_callbackT():
+    generate_q.put(True)
+    generate_q.put(False)
+def setGenerate():
+    if generate == False:
+        generate = True
+    generate = False
+
+
 def pickNewsType(newsType):
     news = newsType
-    print(news)
-    return news
+
 
 frame1 = tk.Frame(
     master=window,
@@ -74,9 +84,9 @@ btnGenerate = tk.Button(frame1,
     width = 50,
     height = 5,
     bg="#009CFF", 
-    text="Science",
+    text="Generate Snippet",
     fg="white",
-    command=main.mainFunction()
+    command=button_callbackT()
 )
 
 createWindow()
