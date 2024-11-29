@@ -1,3 +1,5 @@
 {
-    "newsToken" : "enteryourtokenhere"
+    "newsToken" : "enteryourtokenhere",
+    "gptToken" : "x",
+    "elevenlabsToken" : "x"
 }
