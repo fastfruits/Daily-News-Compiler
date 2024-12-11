@@ -2,6 +2,7 @@ import worldnewsapi
 from worldnewsapi.rest import ApiException
 from datetime import date, timedelta
 import ui
+import json
 
 def getToken(file_path, variable):
     with open(file_path, 'r') as file:
@@ -15,22 +16,25 @@ newsType = ui.news
 #class NewsManager:  
 def NewsManager():
         try:
-            newsapiInstance = worldnewsapi.NewsApi(worldnewsapi.ApiClient(newsapi_configuration))
+            if(newsapi_key == "x"):
+                 print("Invalid News API Key")
+            else:
+                newsapiInstance = worldnewsapi.NewsApi(worldnewsapi.ApiClient(newsapi_configuration))
 
-            response = newsapiInstance.search_news(
-                text="",
-                source_countries='us',
-                language='en',
-                earliest_publish_date=str(date.today()-timedelta(days=31)),
-                latest_publish_date=str(date.today()),
-                categories=newsType,
-                sort="publish-time",
-                sort_direction="desc",
-                min_sentiment=0,
-                max_sentiment=0.75,
-                offset=0,
-                number=5
-            )
+                response = newsapiInstance.search_news(
+                    text="",
+                    source_countries='us',
+                    language='en',
+                    earliest_publish_date=str(date.today()-timedelta(days=31)),
+                    latest_publish_date=str(date.today()),
+                    categories=newsType,
+                    sort="publish-time",
+                    sort_direction="desc",
+                    min_sentiment=0,
+                    max_sentiment=0.75,
+                    offset=0,
+                    number=5
+                )
 
         except ApiException as e:
             print("Exception when calling news API\n" % e)

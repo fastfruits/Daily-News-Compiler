@@ -4,6 +4,7 @@ from queue import Queue
 
 voice = "Voice1"
 news = ""
+duration = ""
 generate_q = Queue()
 
 window = tk.Tk()
@@ -14,6 +15,9 @@ window.resizable(False, False)
 
 def createWindow():
     label.pack()
+    btnSmall.pack()
+    btnMedium.pack()
+    btnLarge.pack()
     btnScience.pack()
     btnPolitics.pack()
     btnTech.pack()
@@ -35,6 +39,8 @@ def setGenerate():
 def pickNewsType(newsType):
     news = newsType
 
+def changeSize(size):
+    duration = size
 
 frame1 = tk.Frame(
     master=window,
@@ -46,6 +52,27 @@ label = tk.Label(frame1,
     text="Welcome to News Compiler!", 
     bg="#009CFF", 
     fg="white"
+)
+btnSmall = tk.button(frame1,
+    width = 50,
+    height = 5,
+    bg = "#009CFF",
+    text = "Small(~500 Words/5:00 Runtime)", 
+    command=changeSize(500)     
+)
+btnMedium = tk.button(frame1,
+    width = 50,
+    height = 5,
+    bg = "#009CFF",
+    text = "Medium(~1000 Words/10:00 Runtime)",
+    command=changeSize(1000)     
+)
+btnLarge = tk.button(frame1,
+    width = 50,
+    height = 5,
+    bg = "#009CFF",
+    text = "Large(~1500 Words/15:00 Runtime)",
+    command=changeSize(1500)     
 )
 btnScience = tk.Button(frame1, 
     width = 50,

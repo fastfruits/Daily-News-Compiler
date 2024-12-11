@@ -1,7 +1,9 @@
 from openai import OpenAI
 import tiktoken
 import json
+import ui
 
+duration = ui.duration
 def getToken(file_path, variable):
     with open(file_path, 'r') as file:
         config = json.load(file)
@@ -39,7 +41,7 @@ class GPTManager:
             return
 
         # Check that the prompt is under the token context limit
-        question = [{"role": "user", "content": "Summarize this into " + prompt}]
+        question = [{"role": "user", "content": "Summarize this into a presentable story almost like a news broadcast. Limit it to " + duration + " words but don't remove anything important. " + prompt}]
         if tokenCnt(question) > 8000:
             print("The length of this chat question is too large")
             return
