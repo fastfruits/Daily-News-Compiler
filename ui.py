@@ -4,7 +4,8 @@ from queue import Queue
 
 voice = "Voice1"
 news = ""
-duration = ""
+duration = 0
+generate = False
 generate_q = Queue()
 
 window = tk.Tk()
@@ -38,9 +39,11 @@ def setGenerate():
 
 def pickNewsType(newsType):
     news = newsType
+    print(news)
 
 def changeSize(size):
     duration = size
+    print(duration)
 
 frame1 = tk.Frame(
     master=window,

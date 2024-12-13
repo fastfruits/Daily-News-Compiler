@@ -5,6 +5,7 @@ from gpt import GPTManager
 from elevenlabsVoice import VoiceManager
 from audio import AudioManager
 import queue
+import time
 
 generateQ = ui.generate_q
 voice = ui.voice
@@ -12,10 +13,19 @@ FIRST_SYSTEM_MESSAGE = "Summarize every prompt given to you so they are no more 
 
 
 def mainFunction():
-    while generate == False:
-        if not generateQ.empty():
-            ui.generate = generateQ.get()
-    GPTManager.chat_history.append(FIRST_SYSTEM_MESSAGE)
+ #   while True:
+  #      if not generateQ.empty():
+   #         ui.generate = generateQ.get()
+        
+        
+    #    if not ui.generate:
+     #       time.sleep(0.1)
+      #      continue
+    
+    #    while generate == False:
+     #       if not generateQ.empty():
+      #      ui.generate = generateQ.get()
+       # GPTManager.chat_history.append(FIRST_SYSTEM_MESSAGE)
 
     VOICE = voice
 
