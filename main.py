@@ -8,7 +8,7 @@ import queue
 import time
 
 generateQ = ui.generate_q
-voice = ui.voice
+voice = "Voice1"
 FIRST_SYSTEM_MESSAGE = "Summarize every prompt given to you so they are no more than 1500 words long but make sure to get all the important details."
 
 
@@ -47,7 +47,7 @@ def mainFunction():
 if __name__ == "__main__":
     print(mainFunction())
 
-background_thread = threading.Thread(target=mainFunction, daemon=True)
-background_thread.start()
+#background_thread = threading.Thread(target=mainFunction, daemon=True)
+#background_thread.start()
 
 ui.createWindow()

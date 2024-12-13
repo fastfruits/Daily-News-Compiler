@@ -16,7 +16,7 @@ newsType = ui.news
 #class NewsManager:  
 def NewsManager():
         try:
-            if(newsapi_key == "x"):
+            if(newsapi_key == "x" or newsapi_key == ""):
                  print("Invalid News API Key")
             else:
                 newsapiInstance = worldnewsapi.NewsApi(worldnewsapi.ApiClient(newsapi_configuration))
@@ -25,7 +25,7 @@ def NewsManager():
                     text="",
                     source_countries='us',
                     language='en',
-                    earliest_publish_date=str(date.today()-timedelta(days=31)),
+                    earliest_publish_date=str(date.today()-timedelta(days=7)),
                     latest_publish_date=str(date.today()),
                     categories=newsType,
                     sort="publish-time",

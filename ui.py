@@ -1,8 +1,7 @@
 import tkinter as tk
 from queue import Queue
+import main
 
-
-voice = "Voice1"
 news = ""
 duration = 0
 generate = False
@@ -47,20 +46,21 @@ def changeSize(size):
     print(duration)
 
 frame1 = tk.Frame(
-    master=window,
-    width=100, 
-    height=200,
-    bg="#009CFF"
+    master = window,
+    width = 100, 
+    height = 200,
+    bg = "#009CFF"
 )
 frame2 = tk.Frame(
     master = window,
     width = 100,
     height = 200,
+    bg = "#009CFF"
 )
 label = tk.Label(frame1, 
-    text="Welcome to News Compiler!", 
-    bg="#009CFF", 
-    fg="white"
+    text = "Welcome to News Compiler!", 
+    bg = "#009CFF", 
+    fg = "white"
 )
 btnSmall = tk.Button(frame1,
     width = 50,
@@ -68,7 +68,7 @@ btnSmall = tk.Button(frame1,
     bg = "#009CFF",
     fg = "white",
     text = "Small(~500 Words/5:00 Runtime)", 
-    command=changeSize(500)     
+    command = changeSize(500)     
 )
 btnMedium = tk.Button(frame1,
     width = 50,
@@ -76,7 +76,7 @@ btnMedium = tk.Button(frame1,
     bg = "#009CFF",
     fg = "white",
     text = "Medium(~1000 Words/10:00 Runtime)",
-    command=changeSize(1000)     
+    command = changeSize(1000)     
 )
 btnLarge = tk.Button(frame1,
     width = 50,
@@ -84,48 +84,49 @@ btnLarge = tk.Button(frame1,
     bg = "#009CFF",
     fg = "white",
     text = "Large(~1500 Words/15:00 Runtime)",
-    command=changeSize(1500)     
+    command = changeSize(1500)     
 )
 btnScience = tk.Button(frame1, 
     width = 50,
     height = 5,
-    bg="#009CFF", 
-    text="Science",
-    fg="white",
-    command=pickNewsType("science")
+    bg = "#009CFF", 
+    text = "Science",
+    fg = "white",
+    command = pickNewsType("science")
 )
 btnPolitics = tk.Button(frame1, 
     width = 50,
     height = 5,
-    bg="#009CFF", 
-    text="Politics",
-    fg="white",
-    command=pickNewsType("politics")
+    bg = "#009CFF", 
+    text = "Politics",
+    fg = "white",
+    command = pickNewsType("politics")
 )
 btnTech = tk.Button(frame1, 
     width = 50,
     height = 5,
-    bg="#009CFF", 
-    text="Technology",
-    fg="white",
-    command=pickNewsType("technology")
+    bg = "#009CFF", 
+    text = "Technology",
+    fg = "white",
+    command = pickNewsType("technology")
 )
 btnNature = tk.Button(frame1, 
     width = 50,
     height = 5,
-    bg="#009CFF", 
-    text="Nature",
-    fg="white",
-    command=pickNewsType("environment")
+    bg = "#009CFF", 
+    text = "Nature",
+    fg = "white",
+    command = pickNewsType("environment")
 )
 
 btnGenerate = tk.Button(frame1, 
     width = 50,
     height = 5,
-    bg="#009CFF", 
-    text="Generate Snippet",
-    fg="white",
-    command=button_callbackT()
+    bg = "#009CFF", 
+    text = "Generate Snippet",
+    fg = "white",
+    #command = button_callbackT()
+    command = main.mainFunction()
 )
 
 createWindow()
