@@ -63,30 +63,30 @@ label = tk.Label(frame1,
     fg = "white"
 )
 btnSmall = tk.Button(frame1,
-    width = 50,
-    height = 5,
+    width = 25,
+    height = 10,
     bg = "#009CFF",
     fg = "white",
-    text = "Small(~500 Words/5:00 Runtime)", 
-    command = changeSize(500)     
+    text = "Small(~750 Words/5:00 Runtime)", 
+    command = changeSize(750)
 )
 btnMedium = tk.Button(frame1,
-    width = 50,
-    height = 5,
+    width = 25,
+    height = 10,
     bg = "#009CFF",
     fg = "white",
-    text = "Medium(~1000 Words/10:00 Runtime)",
-    command = changeSize(1000)     
+    text = "Medium(~1500 Words/10:00 Runtime)",
+    command = changeSize(1500)
 )
 btnLarge = tk.Button(frame1,
-    width = 50,
-    height = 5,
+    width = 25,
+    height = 10,
     bg = "#009CFF",
     fg = "white",
-    text = "Large(~1500 Words/15:00 Runtime)",
-    command = changeSize(1500)     
+    text = "Large(~2250 Words/15:00 Runtime)",
+    command = changeSize(2250) 
 )
-btnScience = tk.Button(frame1, 
+btnScience = tk.Button(frame2, 
     width = 50,
     height = 5,
     bg = "#009CFF", 
@@ -94,7 +94,7 @@ btnScience = tk.Button(frame1,
     fg = "white",
     command = pickNewsType("science")
 )
-btnPolitics = tk.Button(frame1, 
+btnPolitics = tk.Button(frame2, 
     width = 50,
     height = 5,
     bg = "#009CFF", 
@@ -102,7 +102,7 @@ btnPolitics = tk.Button(frame1,
     fg = "white",
     command = pickNewsType("politics")
 )
-btnTech = tk.Button(frame1, 
+btnTech = tk.Button(frame2, 
     width = 50,
     height = 5,
     bg = "#009CFF", 
@@ -110,7 +110,7 @@ btnTech = tk.Button(frame1,
     fg = "white",
     command = pickNewsType("technology")
 )
-btnNature = tk.Button(frame1, 
+btnNature = tk.Button(frame2, 
     width = 50,
     height = 5,
     bg = "#009CFF", 
@@ -119,7 +119,7 @@ btnNature = tk.Button(frame1,
     command = pickNewsType("environment")
 )
 
-btnGenerate = tk.Button(frame1, 
+btnGenerate = tk.Button(frame2, 
     width = 50,
     height = 5,
     bg = "#009CFF", 

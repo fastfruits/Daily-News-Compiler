@@ -4,6 +4,7 @@ import json
 import ui
 
 duration = ui.duration
+
 def getToken(file_path, variable):
     with open(file_path, 'r') as file:
         config = json.load(file)
@@ -26,7 +27,7 @@ def tokenCnt(messages, model='gpt-4'):
       
 
 class GPTManager:
-    
+
     def __init__(self):
         self.chat_history = [] # Stores the entire conversation
         try:
@@ -41,7 +42,7 @@ class GPTManager:
             return
 
         # Check that the prompt is under the token context limit
-        question = [{"role": "user", "content": "Summarize this into a presentable story almost like a news broadcast. Limit it to " + duration + " words but don't remove anything important. " + prompt}]
+        question = [{"role": "user", "content": "Summarize this into a presentable story almost like a news broadcast. Limit it to " + duration + " words but don't remove any important facts. " + prompt}]
         if tokenCnt(question) > 8000:
             print("The length of this chat question is too large")
             return

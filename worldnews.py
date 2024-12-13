@@ -22,18 +22,18 @@ def NewsManager():
                 newsapiInstance = worldnewsapi.NewsApi(worldnewsapi.ApiClient(newsapi_configuration))
 
                 response = newsapiInstance.search_news(
-                    text="",
-                    source_countries='us',
-                    language='en',
-                    earliest_publish_date=str(date.today()-timedelta(days=7)),
-                    latest_publish_date=str(date.today()),
-                    categories=newsType,
-                    sort="publish-time",
-                    sort_direction="desc",
-                    min_sentiment=0,
-                    max_sentiment=0.75,
-                    offset=0,
-                    number=5
+                    text = "",
+                    source_countries = 'us',
+                    language = 'en',
+                    earliest_publish_date = str(date.today() - timedelta(days = 7)),
+                    latest_publish_date = str(date.today()),
+                    categories = newsType,
+                    sort = "publish-time",
+                    sort_direction = "desc",
+                    min_sentiment = 0,
+                    max_sentiment = 0.75,
+                    offset = 0,
+                    number = 5
                 )
 
         except ApiException as e:
